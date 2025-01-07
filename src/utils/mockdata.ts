@@ -1,10 +1,10 @@
-export const clients = [
+export const clientsData = [
   {
     id: 1,
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'In treatment'
   },
@@ -13,7 +13,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Couple",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'In treatment'
   },
@@ -22,7 +22,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Family",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'In treatment'
   },
@@ -31,7 +31,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'In treatment'
   },
@@ -40,7 +40,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Child",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'In treatment'
   },
@@ -49,7 +49,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Group",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },
@@ -59,7 +59,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },
@@ -68,7 +68,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },
@@ -77,7 +77,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },
@@ -86,7 +86,7 @@ export const clients = [
     clientName: "Georgi",
     clinicianName: "Georgi",
     clientType: "Individual",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },
@@ -95,7 +95,7 @@ export const clients = [
     clientName: "jhon",
     clinicianName: "doe",
     clientType: "Child",
-    lastSession: "Oct 31,2023",
+    lastSession: new Date("2023-10-31"),
     notes: "3213",
     status: 'Deactivated'
   },

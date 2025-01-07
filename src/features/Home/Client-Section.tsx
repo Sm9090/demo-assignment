@@ -1,10 +1,11 @@
-import { clients } from "../../utils/mockdata";
+import { clientsData } from "../../utils/mockdata";
 import { Client } from "../../utils/type";
 import Table from "../../components/Table/Table";
 import React from "react";
 import StatusTabs from "./StatusTabs";
 import Filters from "./Filters";
 import ActionBar from "./Action-Bar";
+import { addClient, filterClients, getUniqueValues } from "../../utils/helper";
 
 function ClientSection() {
   const [selectTable, setSelectTable] = React.useState<string>("In treatment");
@@ -12,23 +13,14 @@ function ClientSection() {
   const [clientNameQuery, setClientNameQuery] = React.useState<string>("");
   const [clinicianNameQuery, setClinicianNameQuery] =
     React.useState<string>("");
-  const [clientss, setClients] = React.useState(clients);
+  const [clients, setClients] = React.useState<Client[]>(clientsData);
 
-  const filteredClients = React.useMemo(() => {
-    return clientss.filter((client) => {
-      const matchesStatus = client.status === selectTable;
-      const matchesClientName =
-        clientNameQuery === "" ||
-        client.clientName.toLowerCase().includes(clientNameQuery.toLowerCase());
-      const matchesClinicianName =
-        clinicianNameQuery === "" ||
-        client.clinicianName
-          .toLowerCase()
-          .includes(clinicianNameQuery.toLowerCase());
+  const filteredClients = React.useMemo(
+    () =>
+      filterClients(clients, selectTable, clientNameQuery, clinicianNameQuery),
+    [clients, selectTable, clientNameQuery, clinicianNameQuery]
+  );
 
-      return matchesStatus && matchesClientName && matchesClinicianName;
-    });
-  }, [clientss, selectTable, clientNameQuery, clinicianNameQuery]);
   const handleRowSelect = (clientId: number, isChecked: boolean) => {
     setSelectedClients((prevSelected) =>
       isChecked
@@ -37,17 +29,22 @@ function ClientSection() {
     );
   };
 
+  const handleSelectAll = (isChecked: boolean) => {
+    if (isChecked) {
+      const allClientIds = filteredClients.map((client) => client.id);
+      setSelectedClients(allClientIds);
+    } else {
+      setSelectedClients([]);
+    }
+  };
+
   const clientNames = React.useMemo(
-    () =>
-      Array.from(new Set(filteredClients.map((client) => client.clientName))),
+    () => getUniqueValues(filteredClients, "clientName"),
     [filteredClients]
   );
 
   const clinicianNames = React.useMemo(
-    () =>
-      Array.from(
-        new Set(filteredClients.map((client) => client.clinicianName))
-      ),
+    () => getUniqueValues(filteredClients, "clinicianName"),
     [filteredClients]
   );
 
@@ -57,19 +54,12 @@ function ClientSection() {
   ];
 
   const addNewClient = (newClient: Client) => {
-    setClients((prevClients) => [
-      ...prevClients,
-      {
-        ...newClient,
-        id: prevClients.length + 1,
-        status: "In treatment",
-        lastSession:
-          newClient.lastSession instanceof Date
-            ? newClient.lastSession.toISOString()
-            : newClient.lastSession,
-      },
-    ]);
+    setClients((prevClients) => addClient(prevClients, newClient));
   };
+
+  React.useEffect(() => {
+    setSelectedClients([]);
+  }, [selectTable]);
   return (
     <>
       <div className="space-y-4">
@@ -94,7 +84,12 @@ function ClientSection() {
           />
         </div>
         {filteredClients.length > 0 ? (
-          <Table clients={filteredClients} onRowSelect={handleRowSelect} />
+          <Table
+            clients={filteredClients}
+            onRowSelect={handleRowSelect}
+            onSelectAll={handleSelectAll}
+            selectedClients={selectedClients}
+          />
         ) : (
           <div className="text-center py-5  text-[14px]">
             🙁 Oops! No matches found. Please double-check your input.

@@ -3,14 +3,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      BoxShadow: {
-        custom: "0 50px 25px -24px rgb(0 0 0 / 0.3)",
-      },
-    },
-    variants: {
-      extend: {
-        backgroundColor: ["checked"],
-        borderColor: ["checked"],
+      colors: {
+        brand: {
+          primary: "#731054", // Primary brand color
+          secondary: "#DE0D6F", // Secondary brand color
+          light: "#D6E4F4", // Light background
+          gray: "#707070", // Neutral gray text
+        },
       },
     },
     
@@ -19,15 +18,15 @@ export default {
       // => @media (max-width: 1535px) { ... }
 
       "1xl": { max: "1400px" },
-      // => @media (min-width: 1279px) { ... }
-      xl: { max: "1279px" },
-      // => @media (max-width: 1279px) { ... }
+      // => @media (min-width: 1280px) { ... }
+      xl: { max: "1280px" },
+      // => @media (max-width: 1280px) { ... }
 
       lg2: { max: "1200px" },
       // => @media (max-width: 1120px) { ... }
 
-      lg: { max: "1023px" },
-      // => @media (max-width: 1023px) { ... }
+      lg: { max: "1024px" },
+      // => @media (max-width: 1024px) { ... }
 
       md0: { max: "900px" },
       // => @media (max-width: 900px) { ... }

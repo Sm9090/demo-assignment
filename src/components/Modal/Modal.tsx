@@ -6,7 +6,6 @@ import Input from "../Inputs/Input";
 import YearPickerInput from "../Inputs/DatePicker";
 import SelectOption from "../Inputs/Select-Option";
 import ToggleButton from "../Inputs/Toggle-Button";
-import { formatDate } from "../../utils/helper";
 
 
 function Modal({ isOpen, onClose ,addClient}: ModalProps) {
@@ -28,13 +27,14 @@ function Modal({ isOpen, onClose ,addClient}: ModalProps) {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newClient = {
+      id: Math.floor(Math.random() * 1000000),
       clientName: clientType === "Individual" ? name : `${name} & ${name2}`,
       clinicianName: name, 
       clientType,
       notes: extraNotes,
       yearOfBirth: yearOfBirth || "N/A",
       pronoun: clientType === "Individual" ? pronoun : "N/A",
-      lastSession: formatDate(new Date()), 
+      lastSession: new Date(), 
       status: 'In treatment'
     };
     addClient(newClient);
