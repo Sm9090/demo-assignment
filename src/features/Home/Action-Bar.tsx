@@ -20,13 +20,13 @@ function ActionBar({ selectedClients, selectTable ,addNewClient }: ActionBarProp
             alt="archive"
             width={16}
           />
-          <button className="text-[#731054] text-[14px]">
+          <button className="text-brand-primary text-[14px]">
             {selectTable === "In treatment" ? "Deactivate" : "Reactivate"}
           </button>
         </div>
       )}
       {selectTable === "In treatment" && (
-        <button className="flex items-center font-normal text-[16px] border border-[#731054] text-[#731054] px-[30.70px] py-2 rounded-[4px]" onClick={toggleModal}>
+        <button className="flex items-center font-normal text-[16px] border border-brand-primary text-brand-primary px-[30.70px] py-2 rounded-[4px]" onClick={toggleModal}>
           <img src={add} alt="add" width={16} className="mr-2" /> Add new Client
         </button>
       )}

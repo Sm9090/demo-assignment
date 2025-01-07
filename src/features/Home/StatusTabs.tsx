@@ -7,7 +7,7 @@ function StatusTabs({
   onSelectTable,
 }: StatusTabsProps) {
   return (
-    <div className="flex bg-[#fff] rounded-[16px] w-full p-[4px]">
+    <div className="flex bg-brand-white rounded-[16px] w-full p-[4px]">
       {statuses.map((status) => {
         const count = clients.filter(
           (client) => client.status === status.key

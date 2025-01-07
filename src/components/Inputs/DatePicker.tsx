@@ -22,7 +22,7 @@ function YearPickerInput({
           onChange={handleChangeEvent}
           showYearPicker
           dateFormat="yyyy"
-          className="!w-full border rounded text-sm p-2 focus:outline-none focus:border-[#731054]"
+          className="!w-full border rounded text-sm p-2 focus:outline-none focus:border-brand-primary"
           placeholderText="Select Year"
         />
       </div>

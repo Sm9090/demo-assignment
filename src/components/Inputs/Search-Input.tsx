@@ -46,7 +46,7 @@ function Input({ title , data ,setSearchQuery}: SearchInputProps) {
           name={label}
           value={inputValue}
           onChange={handleInputChange}
-          className="px-2 py-[12px] border font-light rounded-lg w-full focus:outline-none focus:border-[#731054] text-[14px]"
+          className="px-2 py-[12px] border font-light rounded-lg w-full focus:outline-none focus:border-brand-primary text-[14px]"
           autoComplete="off"
         />
         <img

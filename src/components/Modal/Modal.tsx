@@ -63,7 +63,7 @@ function Modal({ isOpen, onClose ,addClient}: ModalProps) {
                 </button>
               </div>
               <div>
-                <p className="text-center text-[14px] text-[#707070] font-light">
+                <p className="text-center text-[14px] text-brand-gray font-light">
                   This client information is essential for generating detailed
                   clients documents
                 </p>
@@ -72,7 +72,7 @@ function Modal({ isOpen, onClose ,addClient}: ModalProps) {
             <form className="space-y-6" onSubmit={handleFormSubmit}>
               <div className="text-[12px] font-light space-y-2">
                 <div>
-                  Client type <span className="text-[#F3404F]">*</span>
+                  Client type <span className="text-brand-required">*</span>
                 </div>
                 <div className="space-x-4">
                   <Radio
@@ -99,7 +99,7 @@ function Modal({ isOpen, onClose ,addClient}: ModalProps) {
                 <>
                   <div>
                     <div className="text-[12px] font-light space-y-2">
-                      Pronouns <span className="text-[#F3404F]">*</span>
+                      Pronouns <span className="text-brand-required">*</span>
                     </div>
                     <div className="flex justify-between space-y-2">
                       <Radio
@@ -144,7 +144,7 @@ function Modal({ isOpen, onClose ,addClient}: ModalProps) {
               <div className="flex justify-end space-x-2">
                 <button
                   type="submit"
-                  className="bg-[#731054] text-white px-4 py-2 rounded text-[14px] font-extralight"
+                  className="bg-brand-primary text-white px-4 py-2 rounded text-[14px] font-extralight"
                 >
                   Add Client
                 </button>
