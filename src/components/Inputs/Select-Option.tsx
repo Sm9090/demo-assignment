@@ -19,10 +19,10 @@ function SelectOption({
   return (
     <div className="text-[12px] font-light space-y-2">
       <label>
-        {title} {required && <span className="text-[#F3404F]">*</span>}
+        {title} {required && <span className="text-brand-required">*</span>}
       </label>
       <div
-        className="w-full bg-[#fff] border rounded text-sm p-2 focus:outline-none focus:border-[#731054]"
+        className="w-full bg-brand-white border rounded text-sm p-2 focus:outline-none focus:border-brand-primary"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {!isDropdownOpen && (
@@ -38,7 +38,7 @@ function SelectOption({
           <ul >
             {options.map((option) => (
               <li onClick={() => setSelectedOption(option)} className="hover:bg-[#bdb2b9] hover:bg-opacity-30 p-[4px] cursor-pointer rounded">
-                <span className="bg-[#EBEBEB] p-[4px] rounded text-[12px] mr-[10px]">
+                <span className="bg-brand-mercury p-[4px] rounded text-[12px] mr-[10px]">
                   {option.split(",")[0]}
                 </span>
                 {option.split(",")[1]}

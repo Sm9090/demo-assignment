@@ -10,7 +10,7 @@ function Checkbox({
       <label className="flex items-center cursor-pointer relative">
         <input
           type="checkbox"
-          className="peer h-4 w-4 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-[#731054] checked:bg-[#731054] checked:border-[#731054]"
+          className="peer h-4 w-4 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-brand-primary checked:bg-brand-primary checked:border-brand-primary"
           id="check2"
           checked={isChecked}
           ref={(el) => {

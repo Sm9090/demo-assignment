@@ -15,19 +15,19 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, links  ,activeLink ,ha
     >
       <div className="flex flex-col px-2 justify-between h-full">
         <div className="flex justify-between">
-          <button className="text-[16px] px-[16px] py-[8px] text-[#fff] bg-gradient-to-r from-[#731054] to-[#DE0D6F] rounded-[4px]">
+          <button className="text-[16px] px-[16px] py-[8px] text-brand-white bg-gradient-to-r from-brand-primary to-brand-primaryLight rounded-[4px]">
             Become SUPER
           </button>{" "}
           <HamburgerMenu onClick={onClose} title="close" />
         </div>
-        <div className="flex flex-col gap-[12px] text-[#707070]">
+        <div className="flex flex-col gap-[12px] text-brand-gray">
           {links.map((link, index) => (
             <p
             onClick={() => handleLinkClick(link)}
               key={index}
               className={`py-4 px-2 w-full  rounded hover:transition-all hover:font-semibold hover:ease-in hover:duration-300 ${
                 activeLink === link
-                ? " bg-[#731054] text-[#fff] font-semibold duration-0"
+                ? " bg-brand-primary text-brand-white font-semibold duration-0"
                 : ""}`}
             >
               {link}
@@ -35,17 +35,17 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, links  ,activeLink ,ha
           ))}
             <a
               href="/"
-              className="py-[16px] text-transparent bg-clip-text bg-gradient-to-r from-[#731054] to-[#DE0D6F]"
+              className="py-[16px] text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryLight"
             >
               Earn $80
             </a>
-            <div className="py-4 flex gap-2 text-[#707070] text-[16px] items-center">
+            <div className="py-4 flex gap-2 text-brand-gray text-[16px] items-center">
             <img src={note} alt="noteIcon" />
             <p>12 notes left</p>
             <img src={caution} alt="cautionIcon" />
           </div>
         </div>
-        <div className="py-4  w-full  text-[#731054]  rounded-md text-center text-[20px] cursor-pointer">
+        <div className="py-4  w-full  text-brand-primary  rounded-md text-center text-[20px] cursor-pointer">
           Logout
         </div>
       </div>

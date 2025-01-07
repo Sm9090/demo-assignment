@@ -35,7 +35,7 @@ function Navbar() {
           />
         </div>
         <div className="lg:flex hidden items-center">
-          <p className="rounded-full px-4 py-[10px] bg-[#D6E4F4] text-[18px]">
+          <p className="rounded-full px-4 py-[10px] bg-brand-light text-[18px]">
             M
           </p>
         </div>
@@ -46,38 +46,38 @@ function Navbar() {
             height={64}
             className="mr-[68px] xl:mr-auto lg2:w-[100px]"
           />
-          <div className="flex gap-[32px] lg2:gap-[15px] text-[16px] font-normal  text-[#707070]">
+          <div className="flex gap-[32px] lg2:gap-[15px] text-[16px] font-normal  text-brand-gray">
             {links.map((link, index) => (
               <p
                 key={index}
                 onClick={() => handleLinkClick(link)}
                 className={`hover:transition-all hover:font-semibold hover:ease-in  cursor-pointer mt-[24px] pb-[16px] ${
                   activeLink === link
-                    ? "text-[#731054] border-b-4 border-[#731054] font-semibold duration-0"
+                    ? "text-brand-primary border-b-4 border-brand-primary font-semibold duration-0"
                     : ""
                 }`}
               >
                 {link}
               </p>
             ))}
-            <p className="px-[16px] text-transparent bg-clip-text bg-gradient-to-r from-[#731054] to-[#DE0D6F] cursor-pointer mt-[24px] pb-[16px]">
+            <p className="px-[16px] text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryLight cursor-pointer mt-[24px] pb-[16px]">
               Earn $80
             </p>
           </div>
         </div>
         <div className="flex items-center px-4 gap-[16px] text-[16px] lg:hidden">
-          <div className="flex gap-2 text-[#707070]  items-center">
+          <div className="flex gap-2 text-brand-gray  items-center">
             <img src={note} alt="noteIcon" />
             <p>12 notes left</p>
             <img src={caution} alt="cautionIcon" />
           </div>
           <div className="">
-            <button className="px-[16px] py-[8px] text-[#fff] bg-gradient-to-r from-[#731054] to-[#DE0D6F] rounded-[4px]">
+            <button className="px-[16px] py-[8px] text-brand-white bg-gradient-to-r from-brand-primary to-brand-primaryLight rounded-[4px]">
               Become SUPER
             </button>
           </div>
           <div className="flex items-center gap-1">
-            <p className="rounded-full px-4 py-[10px] bg-[#D6E4F4] ">
+            <p className="rounded-full px-4 py-[10px] bg-brand-light ">
               M
             </p>
             <img src={arrowdown} alt="arrowdown" />
