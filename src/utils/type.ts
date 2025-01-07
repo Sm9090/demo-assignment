@@ -1,9 +1,9 @@
 export interface Client {
-  id?: number | string;
+  id: number;
   clientName: string;
   clinicianName: string;
   clientType: string;
-  lastSession: string | Date;
+  lastSession: Date;
   yearOfBirth?: string;
   pronoun?: string;
   notes: string;
@@ -77,4 +77,17 @@ export interface DrawerProps {
 export interface HamburgerMenuProps {
   onClick: () => void;
   title?: string
+}
+
+export interface TableProps {
+  clients: Client[];
+  selectedClients: number[];
+  onRowSelect: (clientId: number, isChecked: boolean) => void;
+  onSelectAll: (isChecked: boolean) => void;
+}
+
+export interface CheckedInputProps {
+  isChecked?: boolean;
+  isIndeterminate?: boolean;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }
